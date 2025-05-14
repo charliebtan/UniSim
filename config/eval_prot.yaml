@@ -1,0 +1,6 @@
+test_set: ./dataset/ATLAS/test.jsonl
+gen_dir: /path/to/results
+sde_step: 25
+inf_step: 1000
+guidance: 0.05
+use_distances: false

@@ -1,0 +1,13 @@
+name: none
+mode: all
+test_set: ./dataset/ATLAS/test.jsonl
+ckpt: /path/to/ckpt/unisim_atlas.ckpt
+save_dir: null
+inf_step: 1_000
+sde_step: 50
+temperature: 300
+guidance: 0.05
+use_energy_minim: true
+force_field: amber14-implicit
+batch_size: 1
+gpu: 0

@@ -1,0 +1,13 @@
+name: none
+mode: all
+test_set: ./dataset/md22/test.jsonl
+ckpt: /path/to/ckpt/unisim_md17.ckpt
+save_dir: null
+inf_step: 1_000
+sde_step: 15
+temperature: 300
+guidance: 0.2
+use_energy_minim: false
+force_field: amber14-implicit
+batch_size: 1
+gpu: 0

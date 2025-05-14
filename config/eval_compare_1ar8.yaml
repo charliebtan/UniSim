@@ -1,0 +1,17 @@
+pdb: 1ar8
+top: ./dataset/PepMD/sim_new/1ar8/state0.pdb
+traj_ref_path: ./dataset/PepMD/sim_new/1ar8/state0-traj-arrays.npz
+traj_ref_path_rep: null
+use_distances: true
+lag_ref: 100
+lag_model: 1
+models:
+  - method: FBM
+    traj_model_path:
+      - /path/to/results/xxx.xtc
+  - method: Timewarp
+    traj_model_path:
+      - /path/to/results/xxx.xtc
+  - method: UniSim
+    traj_model_path:
+      - /path/to/results/xxx.xtc

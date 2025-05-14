@@ -1,0 +1,44 @@
+data:
+  dataset: uni
+  same_origin: false
+  complexity: "n"
+  ubound_per_batch: 5_000
+  max_batches: 50_000
+  path:
+    pepmd_train: ./dataset/PepMD/train
+    pepmd_valid: .//dataset/PepMD/valid
+    # atlas_train: ./dataset/ATLAS/train
+    # atlas_valid: ./dataset/ATLAS/valid
+    # md17_train: ./dataset/md17/train
+    # md17_valid: ./dataset/md17/valid
+
+training:
+  lr: 0.0005
+  loss_type: null
+  warmup: 1_000
+  max_epoch: 500
+  grad_clip: 1.0
+  batch_size: 3
+  patience: 8
+  save_topk: 10
+  shuffle: true
+  num_workers: 8
+  temperature: 300
+  save_dir: /path/to/ckpt/bm
+
+model:
+  encoder: null
+  ckpt: null
+  model_type: bm
+  hidden_dim: 256
+  ffn_dim: 512
+  rbf_dim: 64
+  expand_embed_dim: 32
+  heads: 8
+  layers: 4
+  cutoff_lower: 0.0
+  cutoff_upper: 5.0
+  cutoff_H: 3.5
+  k_neighbors: 16
+  s_eu: 0.2
+  s_a: 0.04
