@@ -8,21 +8,16 @@ sys.path.append('..')
 from utils.bio_utils import get_atype
 
 
-def make_batch(state0file, bs, _format="pdb"):
+def make_batch(state0file, xyz, bs, _format="pdb"):
     if _format == "pdb":
         state0 = md.load(state0file)
         top = state0.topology
-        xyz = 10 * state0.xyz[0] # (N, 3), Angstrom
+        xyz = 10 * xyz
         atype = get_atype(top)  # (N,)
         # to tensor
         atype = torch.from_numpy(atype).long()
         x0 = torch.from_numpy(xyz).float()  # (N, 3)
         x0 = x0 - x0.mean(dim=0)    # CoM
-    elif _format == "npz":
-        data = np.load(state0file)
-        atype = torch.from_numpy(data['z'] - 1).long()
-        x0 = torch.from_numpy(data['R'][0]).float()
-        x0 = x0 - x0.mean(dim=0)
     else:
         raise NotImplementedError(f'File format {_format} cannnot be recognized.')
 

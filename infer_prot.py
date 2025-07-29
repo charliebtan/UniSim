@@ -1,6 +1,7 @@
 import torch
 from torch.utils.data import DataLoader
 from scipy.special import softmax, logsumexp
+import openmm.unit as unit
 from openmm.app import PDBFile
 import time
 import glob
@@ -20,6 +21,8 @@ from simulation import (
     get_simulation_environment_from_pdb,
     spring_constraint_energy_minimization
 )
+
+from simulation.hacks import minimize_with_scipy
 
 ### set backend == "pytorch"
 os.environ["GEOMSTATS_BACKEND"] = "pytorch"
@@ -83,14 +86,28 @@ def main(args):
             param["force-field"] = args.force_field
             sim = get_simulation_environment_from_pdb(pdb_path, parameters=param)
 
+        print(f"Start inference for PDB {pdb_name}.")
+        start = time.time()
+
+        total_count = 0
+
+        energy_before = sim.context.getState(getEnergy=True).getPotentialEnergy()
+        print(f"Energy before minimization: {energy_before} kJ/mol")
+        minimization_steps = minimize_with_scipy(sim, maxiter=1000)
+        energy_after = sim.context.getState(getEnergy=True).getPotentialEnergy()
+        print(f"Energy after minimization: {energy_after} kJ/mol")
+        print(f"Minimization steps: {minimization_steps}")
+
+        total_count += minimization_steps
+
+        state = sim.context.getState(getPositions=True)
+        xyz_min = state.getPositions(asNumpy=True).value_in_unit(unit.nanometer)
+
         # make test batch
-        batch = make_batch(pdb_path, args.batch_size)
+        batch = make_batch(pdb_path, xyz_min, args.batch_size)
         batch = to_device(batch, device)
 
         positions = []
-
-        print(f"Start inference for PDB {pdb_name}.")
-        start = time.time()
 
         with torch.no_grad():
             for _ in tqdm(range(args.inf_step)):
@@ -100,7 +117,11 @@ def main(args):
                 positions.append(x_numpy)
                 # use energy minimization
                 if args.use_energy_minim:
-                    x = torch.from_numpy(spring_constraint_energy_minimization(sim, x_numpy)).to(x.device) * 10
+                    device = x.device
+                    x, minimization_steps = spring_constraint_energy_minimization(sim, x_numpy)
+                    x = torch.from_numpy(x).to(device) * 10  # convert back to tensor
+                    total_count += minimization_steps
+                    print(f"Minimization steps in inference: {minimization_steps}")
                 # update batch
                 batch["x0"] = x  # nm => Angstrom
 

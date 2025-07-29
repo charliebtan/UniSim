@@ -1,7 +1,7 @@
 name: none
 mode: all
-test_set: ./dataset/ATLAS/test.jsonl
-ckpt: /path/to/ckpt/unisim_atlas.ckpt
+test_set: ./dataset/ours.jsonl
+ckpt: /network/scratch/t/tanc/unisim_pepmd.ckpt 
 save_dir: null
 inf_step: 1_000
 sde_step: 50
