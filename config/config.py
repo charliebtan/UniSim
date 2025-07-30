@@ -20,5 +20,6 @@ def infer_config():
 
     # config
     parser.add_argument('--config', type=str, required=True, default='./config/infer.yaml')
+    parser.add_argument('--index', type=int, default=None)
 
     return parser.parse_args()

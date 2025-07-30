@@ -209,7 +209,7 @@ def get_force(simulation, positions):
     return forces
 
 
-def spring_constraint_energy_minimization(simulation, positions):
+def spring_constraint_energy_minimization(simulation, positions, maxiter=1000):
     spring_constant = 10.0 * u.kilocalories_per_mole / u.angstroms ** 2
     restraint = mm.CustomExternalForce('0.5 * k * ((x - x0)^2 + (y - y0)^2 + (z - z0)^2)')
     restraint.addPerParticleParameter('x0')
@@ -225,7 +225,7 @@ def spring_constraint_energy_minimization(simulation, positions):
 
     simulation.system.addForce(restraint)
     simulation.context.setPositions(positions)
-    count = minimize_with_scipy(simulation, maxiter=1000)
+    count = minimize_with_scipy(simulation, maxiter=maxiter)
 
     # when you now get the state it is already minimized 
     state = simulation.context.getState(getPositions=True)

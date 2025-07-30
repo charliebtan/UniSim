@@ -1,30 +1,75 @@
-{ "pdb": "AAEW", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/AAEW.pdb" }
-{ "pdb": "ANYT", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/ANYT.pdb" }
-{ "pdb": "AVEK", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/AVEK.pdb" }
-{ "pdb": "AWKC", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/AWKC.pdb" }
-{ "pdb": "AYTG", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/AYTG.pdb" }
-{ "pdb": "CSFQ", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/CSFQ.pdb" }
-{ "pdb": "CSGS", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/CSGS.pdb" }
-{ "pdb": "CTSA", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/CTSA.pdb" }
-{ "pdb": "DFKS", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/DFKS.pdb" }
-{ "pdb": "DQAL", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/DQAL.pdb" }
-{ "pdb": "DTDL", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/DTDL.pdb" }
-{ "pdb": "FALS", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/FALS.pdb" }
-{ "pdb": "FIGE", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/FIGE.pdb" }
-{ "pdb": "FIYG", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/FIYG.pdb" }
-{ "pdb": "FKVP", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/FKVP.pdb" }
-{ "pdb": "ITQD", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/ITQD.pdb" }
-{ "pdb": "KKQF", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/KKQF.pdb" }
-{ "pdb": "LPEM", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/LPEM.pdb" }
-{ "pdb": "LYVI", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/LYVI.pdb" }
-{ "pdb": "NQFM", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/NQFM.pdb" }
-{ "pdb": "QADY", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/QADY.pdb" }
-{ "pdb": "QDED", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/QDED.pdb" }
-{ "pdb": "RGSP", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/RGSP.pdb" }
-{ "pdb": "RYDT", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/RYDT.pdb" }
-{ "pdb": "SAEL", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/SAEL.pdb" }
-{ "pdb": "SLTC", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/SLTC.pdb" }
-{ "pdb": "TFFL", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/TFFL.pdb" }
-{ "pdb": "VCVS", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/VCVS.pdb" }
-{ "pdb": "VLSM", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/VLSM.pdb" }
-{ "pdb": "VTST", "state0_path": "../scratch/md-runner-scbg-baselines-new/data/pdbs/VTST.pdb" }
+{"pdb": "AC", "state0_path": "../scratch/old_test_set/AC-traj-state0.pdb"}
+{"pdb": "AT", "state0_path": "../scratch/old_test_set/AT-traj-state0.pdb"}
+{"pdb": "ET", "state0_path": "../scratch/old_test_set/ET-traj-state0.pdb"}
+{"pdb": "GN", "state0_path": "../scratch/old_test_set/GN-traj-state0.pdb"}
+{"pdb": "GP", "state0_path": "../scratch/old_test_set/GP-traj-state0.pdb"}
+{"pdb": "HT", "state0_path": "../scratch/old_test_set/HT-traj-state0.pdb"}
+{"pdb": "IM", "state0_path": "../scratch/old_test_set/IM-traj-state0.pdb"}
+{"pdb": "KG", "state0_path": "../scratch/old_test_set/KG-traj-state0.pdb"}
+{"pdb": "KQ", "state0_path": "../scratch/old_test_set/KQ-traj-state0.pdb"}
+{"pdb": "KS", "state0_path": "../scratch/old_test_set/KS-traj-state0.pdb"}
+{"pdb": "LW", "state0_path": "../scratch/old_test_set/LW-traj-state0.pdb"}
+{"pdb": "NF", "state0_path": "../scratch/old_test_set/NF-traj-state0.pdb"}
+{"pdb": "NY", "state0_path": "../scratch/old_test_set/NY-traj-state0.pdb"}
+{"pdb": "RL", "state0_path": "../scratch/old_test_set/RL-traj-state0.pdb"}
+{"pdb": "RV", "state0_path": "../scratch/old_test_set/RV-traj-state0.pdb"}
+{"pdb": "TD", "state0_path": "../scratch/old_test_set/TD-traj-state0.pdb"}
+{ "pdb": "AAEW", "state0_path": "../scratch/old_test_set/AAEW-traj-state0.pdb" }
+{ "pdb": "ANYT", "state0_path": "../scratch/old_test_set/ANYT-traj-state0.pdb" }
+{ "pdb": "AVEK", "state0_path": "../scratch/old_test_set/AVEK-traj-state0.pdb" }
+{ "pdb": "AWKC", "state0_path": "../scratch/old_test_set/AWKC-traj-state0.pdb" }
+{ "pdb": "AYTG", "state0_path": "../scratch/old_test_set/AYTG-traj-state0.pdb" }
+{ "pdb": "CSFQ", "state0_path": "../scratch/old_test_set/CSFQ-traj-state0.pdb" }
+{ "pdb": "CSGS", "state0_path": "../scratch/old_test_set/CSGS-traj-state0.pdb" }
+{ "pdb": "CTSA", "state0_path": "../scratch/old_test_set/CTSA-traj-state0.pdb" }
+{ "pdb": "DFKS", "state0_path": "../scratch/old_test_set/DFKS-traj-state0.pdb" }
+{ "pdb": "DQAL", "state0_path": "../scratch/old_test_set/DQAL-traj-state0.pdb" }
+{ "pdb": "DTDL", "state0_path": "../scratch/old_test_set/DTDL-traj-state0.pdb" }
+{ "pdb": "FALS", "state0_path": "../scratch/old_test_set/FALS-traj-state0.pdb" }
+{ "pdb": "FIGE", "state0_path": "../scratch/old_test_set/FIGE-traj-state0.pdb" }
+{ "pdb": "FIYG", "state0_path": "../scratch/old_test_set/FIYG-traj-state0.pdb" }
+{ "pdb": "FKVP", "state0_path": "../scratch/old_test_set/FKVP-traj-state0.pdb" }
+{ "pdb": "ITQD", "state0_path": "../scratch/old_test_set/ITQD-traj-state0.pdb" }
+{ "pdb": "KKQF", "state0_path": "../scratch/old_test_set/KKQF-traj-state0.pdb" }
+{ "pdb": "LPEM", "state0_path": "../scratch/old_test_set/LPEM-traj-state0.pdb" }
+{ "pdb": "LYVI", "state0_path": "../scratch/old_test_set/LYVI-traj-state0.pdb" }
+{ "pdb": "NQFM", "state0_path": "../scratch/old_test_set/NQFM-traj-state0.pdb" }
+{ "pdb": "QADY", "state0_path": "../scratch/old_test_set/QADY-traj-state0.pdb" }
+{ "pdb": "QDED", "state0_path": "../scratch/old_test_set/QDED-traj-state0.pdb" }
+{ "pdb": "RGSP", "state0_path": "../scratch/old_test_set/RGSP-traj-state0.pdb" }
+{ "pdb": "RYDT", "state0_path": "../scratch/old_test_set/RYDT-traj-state0.pdb" }
+{ "pdb": "SAEL", "state0_path": "../scratch/old_test_set/SAEL-traj-state0.pdb" }
+{ "pdb": "SLTC", "state0_path": "../scratch/old_test_set/SLTC-traj-state0.pdb" }
+{ "pdb": "TFFL", "state0_path": "../scratch/old_test_set/TFFL-traj-state0.pdb" }
+{ "pdb": "VCVS", "state0_path": "../scratch/old_test_set/VCVS-traj-state0.pdb" }
+{ "pdb": "VLSM", "state0_path": "../scratch/old_test_set/VLSM-traj-state0.pdb" }
+{ "pdb": "VTST", "state0_path": "../scratch/old_test_set/VTST-traj-state0.pdb" }
+{"pdb": "PGESTAES", "state0_path": "../scratch/old_test_set/PGESTAES-traj-state0.pdb"}
+{"pdb": "NKEKFFQH", "state0_path": "../scratch/old_test_set/NKEKFFQH-traj-state0.pdb"}
+{"pdb": "MYGRNCYM", "state0_path": "../scratch/old_test_set/MYGRNCYM-traj-state0.pdb"}
+{"pdb": "IDHRQLKW", "state0_path": "../scratch/old_test_set/IDHRQLKW-traj-state0.pdb"}
+{"pdb": "HWHSLICK", "state0_path": "../scratch/old_test_set/HWHSLICK-traj-state0.pdb"}
+{"pdb": "NPCLCYML", "state0_path": "../scratch/old_test_set/NPCLCYML-traj-state0.pdb"}
+{"pdb": "MRDPVLFA", "state0_path": "../scratch/old_test_set/MRDPVLFA-traj-state0.pdb"}
+{"pdb": "DDRDTEQT", "state0_path": "../scratch/old_test_set/DDRDTEQT-traj-state0.pdb"}
+{"pdb": "YFPHAGYT", "state0_path": "../scratch/old_test_set/YFPHAGYT-traj-state0.pdb"}
+{"pdb": "ISKCKNGE", "state0_path": "../scratch/old_test_set/ISKCKNGE-traj-state0.pdb"}
+{"pdb": "KRRGFFLE", "state0_path": "../scratch/old_test_set/KRRGFFLE-traj-state0.pdb"}
+{"pdb": "CLCCGQWN", "state0_path": "../scratch/old_test_set/CLCCGQWN-traj-state0.pdb"}
+{"pdb": "GNDLVTVI", "state0_path": "../scratch/old_test_set/GNDLVTVI-traj-state0.pdb"}
+{"pdb": "EKYYWMQT", "state0_path": "../scratch/old_test_set/EKYYWMQT-traj-state0.pdb"}
+{"pdb": "FWRVDHDM", "state0_path": "../scratch/old_test_set/FWRVDHDM-traj-state0.pdb"}
+{"pdb": "DGVAHALS", "state0_path": "../scratch/old_test_set/DGVAHALS-traj-state0.pdb"}
+{"pdb": "PLFHVMYV", "state0_path": "../scratch/old_test_set/PLFHVMYV-traj-state0.pdb"}
+{"pdb": "SQQKVAFE", "state0_path": "../scratch/old_test_set/SQQKVAFE-traj-state0.pdb"}
+{"pdb": "IFGWVYTG", "state0_path": "../scratch/old_test_set/IFGWVYTG-traj-state0.pdb"}
+{"pdb": "CGSWHKQR", "state0_path": "../scratch/old_test_set/CGSWHKQR-traj-state0.pdb"}
+{"pdb": "WTYAFAHS", "state0_path": "../scratch/old_test_set/WTYAFAHS-traj-state0.pdb"}
+{"pdb": "MWNSTEMI", "state0_path": "../scratch/old_test_set/MWNSTEMI-traj-state0.pdb"}
+{"pdb": "PYIRNCVE", "state0_path": "../scratch/old_test_set/PYIRNCVE-traj-state0.pdb"}
+{"pdb": "ANKSMIEA", "state0_path": "../scratch/old_test_set/ANKSMIEA-traj-state0.pdb"}
+{"pdb": "MAPQTIAT", "state0_path": "../scratch/old_test_set/MAPQTIAT-traj-state0.pdb"}
+{"pdb": "SPHKMRLC", "state0_path": "../scratch/old_test_set/SPHKMRLC-traj-state0.pdb"}
+{"pdb": "VWIPVIDT", "state0_path": "../scratch/old_test_set/VWIPVIDT-traj-state0.pdb"}
+{"pdb": "NHQYGSDP", "state0_path": "../scratch/old_test_set/NHQYGSDP-traj-state0.pdb"}
+{"pdb": "PPWRECNN", "state0_path": "../scratch/old_test_set/PPWRECNN-traj-state0.pdb"}

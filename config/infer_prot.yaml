@@ -3,11 +3,13 @@ mode: all
 test_set: ./dataset/ours.jsonl
 ckpt: /network/scratch/t/tanc/unisim_pepmd.ckpt 
 save_dir: null
-inf_step: 1_000
+inf_step: 10_000
 sde_step: 50
-temperature: 300
+temperature: 310
 guidance: 0.05
 use_energy_minim: true
 force_field: amber14-implicit
 batch_size: 1
 gpu: 0
+max_iter_energy_minimization: 10
+energy_eval_budget: 10_000
