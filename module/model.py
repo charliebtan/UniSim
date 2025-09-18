@@ -175,10 +175,9 @@ class GeomBM(nn.Module):
         lamda = 5.0
         loss_vel = lamda * F.mse_loss(vel_pred[mask], vel_gt[mask] * self.vel_scale, reduction='mean')
         loss_den = F.mse_loss(den_pred[mask], den_gt[mask], reduction='mean')
-        loss_lig = lamda * F.mse_loss(vel_pred[edge_mask == 1], vel_gt[edge_mask == 1] * self.vel_scale, reduction='mean')
+        loss_lig = 0
+        # loss_lig = lamda * F.mse_loss(vel_pred[edge_mask == 1], vel_gt[edge_mask == 1] * self.vel_scale, reduction='mean')
         loss_aux = 0
-        # print(f"vel_pred: {vel_pred[mask].std(dim=0)}, vel_gt: {vel_gt[mask].std(dim=0) * self.vel_scale}")
-        # print(f"env: {batch['env']}, scale: {x0.shape[0] / mask.sum()}, loss_bm: {loss_bm.detach().cpu()}")
 
         same_abid = abid.unsqueeze(-1).repeat(1, abid.shape[0])
         same_abid = same_abid == same_abid.transpose(0, 1)  # (N, N)

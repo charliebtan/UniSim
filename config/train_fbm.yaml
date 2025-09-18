@@ -1,12 +1,12 @@
 data:
   dataset: uni
-  same_origin: true
+  same_origin: false
   complexity: "n"
-  ubound_per_batch: 2_000
+  ubound_per_batch: 5_000
   max_batches: 50_000
   path:
     pepmd_train: ./dataset/PepMD/train
-    pepmd_valid: ./dataset/PepMD/valid
+    pepmd_valid: .//dataset/PepMD/valid
     # atlas_train: ./dataset/ATLAS/train
     # atlas_valid: ./dataset/ATLAS/valid
     # md17_train: ./dataset/md17/train
@@ -24,12 +24,12 @@ training:
   shuffle: true
   num_workers: 8
   temperature: 300
-  save_dir: /path/to/ckpt/fbm
+  save_dir: /path/to/ckpt/bm
 
 model:
-  baseline: null  # should be specified!
+  encoder: null
   ckpt: null
-  model_type: fbm
+  model_type: bm
   hidden_dim: 256
   ffn_dim: 512
   rbf_dim: 64

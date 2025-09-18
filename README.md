@@ -11,10 +11,10 @@ This is the official repository for our paper "UniSim: A Unified Simulator for T
 
 ### Dependencies
 
-We provide conda dependencies for `pytorch 1.13.1 + cuda 11.7`. You can directly create and activate a new conda environment by:
+We provide conda dependencies for `cuda>=12.0`. You can directly create and activate a new conda environment by:
 ```
-conda env create -f env_cu117.yaml
-conda activate unisim
+conda env create -f env.yaml
+conda activate dev
 ```
 
 ### Datasets

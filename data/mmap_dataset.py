@@ -120,7 +120,9 @@ class MMAPDataset(torch.utils.data.Dataset):
 
         if data.get("mask") is None:
             data["mask"] = [1] * len(data["atype"])
-
+        if data.get("edge_mask") is None:
+            data["edge_mask"] = [0] * len(data["atype"])
+            
         return data
 
 
