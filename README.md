@@ -1,3 +1,35 @@
+# UniSim BManyPeptidesMD Baseline
+
+This fork contains an adaptation of the UniSim codebase for sampling the [*ManyPeptidesMD*](https://huggingface.co/datasets/transferable-samplers/many-peptides-md) evaluation dataset released in [*Amortized Sampling with Transferable Normalizing Flows*](https://arxiv.org/abs/2508.18175).
+
+The main changes are:
+- Modifiying the forcefield to match that used in ManyPeptidesMD.
+- TODO
+
+## Installation
+
+We encountered some issues installing using the default yaml files made available. The following was ultimately successful:
+
+```bash
+# Build initial environment
+micromamba env create -f env.yaml 
+
+# Install torch from wheel
+pip install torch==1.13.1+cu117 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+
+# Pip installs
+pip install pyyaml
+pip install mdtraj
+pip install e3nn==0.4.4
+pip install deeptime==0.4.4
+pip install mendeleev==0.15.0
+pip install biopython==1.83
+pip install tqdm
+
+# Test command
+python infer_prot.py --config ./config/infer_prot.yaml --index 0
+```
+
 # UniSim: A Unified Simulator for Time-Coarsened Dynamics of Biomolecules
 
 ![workflow](./media/workflow.png)
