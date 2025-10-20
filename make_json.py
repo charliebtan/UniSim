@@ -1,0 +1,115 @@
+import json
+
+# Input list of peptide codes
+peptides = [
+    "AA",
+    "CE",
+    "CL",
+    "DG",
+    "DI",
+    "FK",
+    "HL",
+    "HM",
+    "IK",
+    "IM",
+    "KG",
+    "LE",
+    "MQ",
+    "NA",
+    "NC",
+    "PG",
+    "PY",
+    "QR",
+    "RL",
+    "RT",
+    "SS",
+    "TD",
+    "VF",
+    "VS",
+    "WA",
+    "WH",
+    "WQ",
+    "WS",
+    "YC",
+    "YQ",
+    "ARIP",
+    "CCVH",
+    "CIPQ",
+    "DEMT",
+    "DMTL",
+    "EHQW",
+    "FESD",
+    "FYYY",
+    "GCDE",
+    "GDTI",
+    "GGRS",
+    "HEAV",
+    "HQVS",
+    "HYGW",
+    "ITYL",
+    "KKAP",
+    "KLLR",
+    "KRWN",
+    "NCFG",
+    "NEVI",
+    "PQIF",
+    "QAKR",
+    "QWNL",
+    "RLMM",
+    "SHKS",
+    "SVND",
+    "TAPF",
+    "TMWC",
+    "VPFY",
+    "WNMA",
+    "ANKSMIEA",
+    "CGSWHKQR",
+    "CLCCGQWN",
+    "DDRDTEQT",
+    "DGVAHALS",
+    "EKYYWMQT",
+    "FWRVDHDM",
+    "GNDLVTVI",
+    "HWHSLICK",
+    "IDHRQLKW",
+    "IFGWVYTG",
+    "ISKCKNGE",
+    "KRRGFFLE",
+    "MAPQTIAT",
+    "MRDPVLFA",
+    "MWNSTEMI",
+    "MYGRNCYM",
+    "NHQYGSDP",
+    "NKEKFFQH",
+    "NPCLCYML",
+    "PGESTAES",
+    "PLFHVMYV",
+    "PPWRECNN",
+    "PYIRNCVE",
+    "SPHKMRLC",
+    "SQQKVAFE",
+    "VWIPVIDT",
+    "WDLIQFRQ",
+    "WTYAFAHS",
+    "YFPHAGYT",
+    "YQNPDGSQA",
+    "GYDPETGTWG",
+]
+
+# Output file path
+output_file = "dataset/many-peptides-md.jsonl"
+
+# Base path for the state0 files
+base_path = "/network/t/tanc/scratch/transferable-samplers/many-peptides-md/pdbs/test"
+
+# Write JSONL file
+with open(output_file, "w") as f:
+    for pdb in peptides:
+        record = {
+            "pdb": pdb,
+            "state0_path": f"{base_path}/{pdb}.pdb"
+        }
+        f.write(json.dumps(record) + "\n")
+        print(pdb)
+
+print(f"✅ JSONL file successfully created: {output_file}")
