@@ -10,6 +10,8 @@ The main changes are:
 
 We encountered some issues installing using the default yaml files made available. The following was ultimately successful:
 
+TODO can probably simplify this - the LD_LIBRARY... command seems to fix the issue I was having
+
 ```bash
 # Build initial environment
 micromamba env create -f env.yaml 
@@ -25,6 +27,9 @@ pip install deeptime==0.4.4
 pip install mendeleev==0.15.0
 pip install biopython==1.83
 pip install tqdm
+
+# Fixes ImportError: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.31' not found.
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
 # Test command
 python infer_prot.py --config ./config/infer_prot.yaml --index 0
