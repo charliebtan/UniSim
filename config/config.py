@@ -21,5 +21,7 @@ def infer_config():
     # config
     parser.add_argument('--config', type=str, required=True, default='./config/infer.yaml')
     parser.add_argument('--index', type=int, default=None)
+    parser.add_argument('--max_iter_energy_minimization', type=int, default=10_000)
+    parser.add_argument('--energy_eval_budget', type=int, default=10_000)
 
     return parser.parse_args()

@@ -1,13 +1,6 @@
 import torch
-from torch.utils.data import DataLoader
-from scipy.special import softmax, logsumexp
 import openmm.unit as unit
-from openmm.app import PDBFile
 import time
-import glob
-import math
-import shutil
-import json
 import os
 import yaml
 import pandas as pd
@@ -33,7 +26,7 @@ torch.set_default_dtype(torch.float32)
 
 def create_save_dir(args):
     if args.save_dir is None:
-        save_dir = '.'.join(args.ckpt.split('.')[:-1]) + '_results_' + str(args.max_iter_energy_minimization)
+        save_dir = f"{args.output_dir}/{args.max_iter_energy_minimization}_itermin_{args.energy_eval_budget}_evalbudget"
     else:
         save_dir = args.save_dir
     os.makedirs(save_dir, exist_ok=True)
@@ -53,7 +46,6 @@ def to_device(data, device):
 
 
 def main(args):
-
     save_dir = create_save_dir(args)
 
     # load model
@@ -96,7 +88,7 @@ def main(args):
 
         energy_before = sim.context.getState(getEnergy=True).getPotentialEnergy()
         print(f"Energy before minimization: {energy_before} kJ/mol")
-        minimization_steps = minimize_with_scipy(sim, maxiter=1000)
+        minimization_steps = minimize_with_scipy(sim, maxiter=args.max_iter_energy_minimization)
         energy_after = sim.context.getState(getEnergy=True).getPotentialEnergy()
         print(f"Energy after minimization: {energy_after} kJ/mol")
         print(f"Minimization steps: {minimization_steps}")
@@ -139,6 +131,8 @@ def main(args):
             topology
         ).save_xtc(os.path.join(out_dir, f'{pdb_name}_model_ode{args.sde_step}_inf{args.inf_step}_guidance{args.guidance}.xtc'))
 
+        print(f"Saved trajectory for PDB {pdb_name} to {out_dir}.")
+
         end = time.time()
         elapsed_time = end - start
 
@@ -157,4 +151,6 @@ if __name__ == "__main__":
         config = yaml.safe_load(f)
     config = dict_to_namespace(config)
     config.index = args.index
+    config.max_iter_energy_minimization = args.max_iter_energy_minimization
+    config.energy_eval_budget = args.energy_eval_budget
     main(config)

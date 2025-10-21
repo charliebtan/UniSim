@@ -129,8 +129,6 @@ def get_system(model, parameters):
         else:
             raise ValueError("Invalid forcefield parameter '%s'" % parameters["force-field"])
 
-        # model.addExtraParticles(forcefield)
-
         # Peter Eastman recommends a large cutoff value for implicit solvent
         # models, around 20 Angstrom (= 2nm), see
         # https://github.com/openmm/openmm/issues/3104
@@ -141,7 +139,7 @@ def get_system(model, parameters):
             constraints=None,
         )
 
-        print('USING YOUR SYSTEM')
+        print('Using ManyPeptidesMD-adapted implicit solvent parameters.')
 
     elif parameters["force-field"] == "amber14-explicit":
         forcefield = mm.app.ForceField("amber14-all.xml", "amber14/tip3pfb.xml")
@@ -209,7 +207,7 @@ def get_force(simulation, positions):
     return forces
 
 
-def spring_constraint_energy_minimization(simulation, positions, maxiter=1000):
+def spring_constraint_energy_minimization(simulation, positions, maxiter=100000):
     spring_constant = 10.0 * u.kilocalories_per_mole / u.angstroms ** 2
     restraint = mm.CustomExternalForce('0.5 * k * ((x - x0)^2 + (y - y0)^2 + (z - z0)^2)')
     restraint.addPerParticleParameter('x0')
