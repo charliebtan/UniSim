@@ -17,29 +17,11 @@ idx="${SLURM_ARRAY_TASK_ID}"
 python infer_prot.py \
     --config ./config/infer_prot.yaml \
     --index $idx \
-    --max_iter_energy_minimization 10 \
-    --energy_eval_budget 10_000
-
-python infer_prot.py \
-    --config ./config/infer_prot.yaml \
-    --index $idx \
     --max_iter_energy_minimization 100 \
     --energy_eval_budget 10_000
 
 python infer_prot.py \
     --config ./config/infer_prot.yaml \
     --index $idx \
-    --max_iter_energy_minimization 1_000 \
-    --energy_eval_budget 10_000
-
-python infer_prot.py \
-    --config ./config/infer_prot.yaml \
-    --index $idx \
     --max_iter_energy_minimization 100 \
-    --energy_eval_budget 1_000_000
-
-python infer_prot.py \
-    --config ./config/infer_prot.yaml \
-    --index $idx \
-    --max_iter_energy_minimization 1_000 \
     --energy_eval_budget 1_000_000
